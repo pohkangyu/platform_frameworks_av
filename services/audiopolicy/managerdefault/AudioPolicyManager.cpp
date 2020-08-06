@@ -4408,6 +4408,7 @@ status_t AudioPolicyManager::initialize() {
         }
         // open input streams needed to access attached devices to validate
         // mAvailableInputDevices list
+#if 0
         for (const auto& inProfile : hwModule->getInputProfiles()) {
             if (!inProfile->canOpenNewIo()) {
                 ALOGE("Invalid Input profile max open count %u for profile %s",
@@ -4450,6 +4451,7 @@ status_t AudioPolicyManager::initialize() {
             }
             inputDesc->close();
         }
+#endif
     }
     // make sure all attached devices have been allocated a unique ID
     auto checkAndSetAvailable = [this](auto& devices) {

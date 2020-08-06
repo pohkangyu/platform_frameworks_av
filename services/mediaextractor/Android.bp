@@ -34,7 +34,8 @@ cc_binary {
                 malloc_not_svelte: {
                     // Scudo increases memory footprint, so only enable on
                     // non-svelte devices.
-                    shared_libs: ["libc_scudo"],
+//To disable this
+//                    shared_libs: ["libc_scudo"],
                 },
             },
         },
@@ -68,4 +69,3 @@ prebuilt_etc {
     },
     required: ["crash_dump.policy"],
 }
-
